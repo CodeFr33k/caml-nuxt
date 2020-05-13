@@ -2,11 +2,14 @@ import fs from 'fs';
 import webpack from 'webpack';
 
 const CAML_FILE = JSON.stringify(
-    fs.readFileSync(process.env.CAML_PATH).toString()
+    fs.readFileSync(process.env.CAML_FILE).toString()
 );
 
 export default {
   mode: 'universal',
+  router: {
+    base: process.env.BASE || '/',
+  },
   /*
   ** Headers of the page
   */
