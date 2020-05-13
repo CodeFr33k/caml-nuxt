@@ -4,11 +4,12 @@ import webpack from 'webpack';
 const CAML_FILE = JSON.stringify(
     fs.readFileSync(process.env.CAML_FILE).toString()
 );
+const base = process.env.BASE || '/';
 
 export default {
   mode: 'universal',
   router: {
-    base: process.env.BASE || '/',
+    base,
   },
   /*
   ** Headers of the page
@@ -21,9 +22,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/x-icon', href: base+'favicon.ico' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: base+'favicon-16x16.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: base+'favicon-32x32.png' },
     ]
   },
   /*
