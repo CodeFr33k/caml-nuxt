@@ -33,7 +33,7 @@ export default class {
     }
     @computed get lines() {
        let lines: string[] = [];
-        for(let record of this.currentRecords.reverse()) {
+        for(let record of this.currentRecords) {
             const htmlLines = record.lines.map((line: string) => {
                 const uris = util.matchUris(line);
                 return uris.reduce((line: any, uri: any) => {
