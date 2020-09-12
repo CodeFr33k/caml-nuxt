@@ -21,6 +21,9 @@
       ],
       "@/*": [
         "./*"
+      ],
+      "~caml-js/*": [
+        "github.com/caml-js/*"
       ]
     },
     "types": [

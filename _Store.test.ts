@@ -1,5 +1,5 @@
 import { observe } from 'mobx';
-import Record from '@/Record';
+import Record from '~caml-js/Record';
 import Store from '@/_Store';
 
 it('load records when reader changes', (done) => {

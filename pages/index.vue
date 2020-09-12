@@ -10,7 +10,7 @@ import {
 } from 'vue-property-decorator';
 import store from '@/store';
 import Lines from '@/Lines.vue';
-
+import '~caml-js/shims';
 declare const CAML_FILE: string;
 
 store.readText(CAML_FILE);
@@ -25,4 +25,9 @@ export default class extends Vue {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+
+body {
+    font-family: 'Cousine', monospace;
+}
 </style>

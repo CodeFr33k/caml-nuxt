@@ -1,5 +1,6 @@
 import fs from 'fs';
 import webpack from 'webpack';
+const path = require("path");
 
 const CAML_FILE = JSON.stringify(
     fs.readFileSync(process.env.CAML_FILE).toString()
@@ -65,6 +66,7 @@ export default {
         })
     ],
     extend (config, ctx) {
+      config.resolve.alias['~caml-js'] = path.resolve(__dirname, 'github.com/caml-js');
     }
   }
 }

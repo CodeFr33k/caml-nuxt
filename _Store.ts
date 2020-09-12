@@ -3,10 +3,10 @@ import {
     observable,
     observe,
 } from 'mobx';
-import Reader from '@/Reader';
-import RecordsFactory from '@/RecordsFactory';
-import Record from '@/Record';
-import * as util from '@/util';
+import Reader from '~caml-js/Reader';
+import RecordsFactory from '~caml-js/RecordsFactory';
+import Record from '~caml-js/Record';
+import * as util from '~caml-js/util';
 
 export default class {
     reader: Reader;
@@ -33,7 +33,7 @@ export default class {
     }
     @computed get lines() {
        let lines: string[] = [];
-        for(let record of this.currentRecords) {
+        for(let record of this.currentRecords.reverse()) {
             const htmlLines = record.lines.map((line: string) => {
                 const uris = util.matchUris(line);
                 return uris.reduce((line: any, uri: any) => {
@@ -46,17 +46,22 @@ export default class {
                     );
                 }, line);
             });
-            for(let annotation of record.annotations) {
-                // FIXME: implement as dispatch table
-                // instead of conditional logic.
-                if(annotation.key === 'img') {
-                    htmlLines.unshift(
-                        '<img ' +
-                        'width="400px" ' +
-                        `src=${annotation.value} />`
-                    );
-                }
-           }
+            for(let img of record.images) {
+                htmlLines.unshift(
+                    '<img ' +
+                    'width="400px" ' +
+                    `src=${img} />`
+                );
+            }
+            for(let uri of record.videos) {
+                htmlLines.unshift(
+                    '<video ' +
+                    'controls ' +
+                    'loop ' +
+                    'width="480px" ' +
+                    `src=${uri} />`
+                );
+            }
             lines = lines.concat(htmlLines);
         } 
         return lines;
