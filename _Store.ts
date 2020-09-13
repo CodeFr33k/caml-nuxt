@@ -49,6 +49,7 @@ export default class {
             for(let img of record.images) {
                 htmlLines.unshift(
                     '<img ' +
+                    `style="display: block; margin: 20px" ` +
                     'width="400px" ' +
                     `src=${img} />`
                 );
@@ -56,6 +57,7 @@ export default class {
             for(let uri of record.videos) {
                 htmlLines.unshift(
                     '<video ' +
+                    `style="display: block; margin: 20px" ` +
                     'controls ' +
                     'loop ' +
                     'width="480px" ' +
