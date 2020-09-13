@@ -25,9 +25,5 @@ export default class extends Vue {
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
 
-body {
-    font-family: 'Cousine', monospace;
-}
 </style>

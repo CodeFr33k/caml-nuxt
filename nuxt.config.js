@@ -36,6 +36,7 @@ export default {
   ** Global CSS
   */
   css: [
+      '~/common.sass'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -52,6 +53,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+      [
+          'nuxt-sass-resources-loader',
+          ['~/common.sass']
+      ]
   ],
   /*
   ** Build configuration
