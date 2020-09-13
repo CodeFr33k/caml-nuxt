@@ -40,7 +40,7 @@ export default class {
                     return line.replace(
                         uri,
                         '<a ' +
-                        'target="blank" ' +
+                        'target="_blank" ' +
                         'rel="noopener noreferrer" ' +
                         `href=${uri}>${uri}</a>`
                     );
