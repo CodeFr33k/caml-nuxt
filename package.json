@@ -16,7 +16,7 @@
     "caml-js": "git+ssh://git@github.com/CodeFr33k/caml-js.git",
     "mobx": "^5.15.4",
     "mobx-vue": "^2.0.10",
-    "nuxt": "^2.0.0"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
